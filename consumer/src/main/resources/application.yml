@@ -1,3 +1,13 @@
 logging:
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+spring:
+  rabbitmq:
+    host: 192.168.209.128 # ip地址
+    port: 5672  # 端口号
+    virtual-host: / # 虚拟主机
+    username: root  # 用户名
+    password: 123456 # 密码
+    listener:
+      simple:
+        prefetch: 1 # 每次只能获取一条消息，处理完成ACK之后，才能获取下一个消息
